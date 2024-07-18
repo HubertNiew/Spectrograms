@@ -6,16 +6,435 @@
     <title>Spektrogramy</title>
     <style>
         h1 {text-align: center;}
-        div {text-align: center;}
+        div {text-align: center;max-width: 90vw; margin: 0 auto;}
+        div.example {margin-bottom: 35px; margin-top: 25px;}
+        .column {display: inline-block; width: 30%;}
+        div.scroll {overflow: auto;}
+        p {font-size: 18px;}
     </style>
 </head>
 <body>
-    <h1>Test</h1>
     <div>
-        test<br><br>
-        <audio controls>
-            <source src="audio/1_rec.ogg" type="audio/ogg">
-        </audio>
+    <p>Uwaga: wszystkie zaprezentowane przykłady, a szczególnie te wygenerowane przez modele, mogą brzmieć nieprzyjemnie - proszę uważać na głośność.<br>
+    Dla wygody odtworzenie jednego dźwięku zatrzymuje pozostałe, więc nie trzeba ich pauzować.</p>
     </div>
+    <hr>
+
+    <h1>1. Spektrogramy - jakość dźwięku</h1>
+    <div>
+        <p>Następujące przykłady demonstrują stratę na jakości wynikającą z konwersji istniejącej muzyki na spektrogram. Każdy przykład zawiera oryginalny dźwięk oraz dźwięk odzyskany z wytworzonego spektrogramu.</p>
+        <div class="example">
+            <img src="1 spec/1_spec.png" width="1000"><br>
+            <div class="column">
+                Oryginał:<br>
+                <audio controls><source src="1 spec/1_org.ogg" type="audio/ogg"></audio>
+            </div>
+            <div class="column">
+                Spektrogram:<br>
+                <audio controls><source src="1 spec/1_rec.ogg" type="audio/ogg"></audio>
+            </div>
+        </div>
+
+        <div class="example">
+            <img src="1 spec/2_spec.png" width="1000"><br>
+            <div class="column">
+                Oryginał:<br>
+                <audio controls><source src="1 spec/2_org.ogg" type="audio/ogg"></audio>
+            </div>
+            <div class="column">
+                Spektrogram:<br>
+                <audio controls><source src="1 spec/2_rec.ogg" type="audio/ogg"></audio>
+            </div>
+        </div>
+
+        <div class="example">
+            <img src="1 spec/3_spec.png" width="1000"><br>
+            <div class="column">
+                Oryginał:<br>
+                <audio controls><source src="1 spec/3_org.ogg" type="audio/ogg"></audio>
+            </div>
+            <div class="column">
+                Spektrogram:<br>
+                <audio controls><source src="1 spec/3_rec.ogg" type="audio/ogg"></audio>
+            </div>
+        </div>
+
+        <div class="example">
+            <img src="1 spec/4_spec.png" width="1000"><br>
+            <div class="column">
+                Oryginał:<br>
+                <audio controls><source src="1 spec/4_org.ogg" type="audio/ogg"></audio>
+            </div>
+            <div class="column">
+                Spektrogram:<br>
+                <audio controls><source src="1 spec/4_rec.ogg" type="audio/ogg"></audio>
+            </div>
+        </div>
+
+        <div class="example">
+            <img src="1 spec/5_spec.png" width="1000"><br>
+            <div class="column">
+                Oryginał:<br>
+                <audio controls><source src="1 spec/5_org.ogg" type="audio/ogg"></audio>
+            </div>
+            <div class="column">
+                Spektrogram:<br>
+                <audio controls><source src="1 spec/5_rec.ogg" type="audio/ogg"></audio>
+            </div>
+        </div>
+
+        <div class="example">
+            <img src="1 spec/6_spec.png" width="1000"><br>
+            <div class="column">
+                Oryginał:<br>
+                <audio controls><source src="1 spec/6_org.ogg" type="audio/ogg"></audio>
+            </div>
+            <div class="column">
+                Spektrogram:<br>
+                <audio controls><source src="1 spec/6_rec.ogg" type="audio/ogg"></audio>
+            </div>
+        </div>
+    </div>
+    <hr>
+    
+    <h1>2. Krótkie przykłady</h1>
+    <div>
+        <p>Następujące przykłady zostały wygenerowane przez stworzone modele. Każdy z nich zawiera fragment wygenerowany dla tego samego promptu przez model bazowy oraz model z inpaintingiem.</p>
+
+        <div class="example">
+            Prompt: epic orchestral music with violins<br><br>
+            <div class="column">
+                Model bazowy:<br>
+                <img src="2 short/1_base.png" height="400"><br>
+                <audio controls><source src="2 short/1_base.wav" type="audio/wav"></audio>
+            </div>
+            <div class="column">
+                Inpainting:<br>
+                <img src="2 short/1_inpaint.png" height="400"><br>
+                <audio controls><source src="2 short/1_inpaint.wav" type="audio/wav"></audio>
+            </div>
+        </div>
+        
+        <div class="example">
+            Prompt: epic orchestral music with violins, intro, the beginning<br><br>
+            <div class="column">
+                Model bazowy:<br>
+                <img src="2 short/2_base.png" height="400"><br>
+                <audio controls><source src="2 short/2_base.wav" type="audio/wav"></audio>
+            </div>
+            <div class="column">
+                Inpainting:<br>
+                <img src="2 short/2_inpaint.png" height="400"><br>
+                <audio controls><source src="2 short/2_inpaint.wav" type="audio/wav"></audio>
+            </div>
+        </div>
+        
+        <div class="example">
+            Prompt: upbeat rock music with electric guitars<br><br>
+            <div class="column">
+                Model bazowy:<br>
+                <img src="2 short/3_base.png" height="400"><br>
+                <audio controls><source src="2 short/3_base.wav" type="audio/wav"></audio>
+            </div>
+            <div class="column">
+                Inpainting:<br>
+                <img src="2 short/3_inpaint.png" height="400"><br>
+                <audio controls><source src="2 short/3_inpaint.wav" type="audio/wav"></audio>
+            </div>
+        </div>
+
+        <div class="example">
+            Prompt: upbeat rock music with electric guitars in the style of Yukihiro Jindo<br><br>
+            <div class="column">
+                Model bazowy:<br>
+                <img src="2 short/4_base.png" height="400"><br>
+                <audio controls><source src="2 short/4_base.wav" type="audio/wav"></audio>
+            </div>
+            <div class="column">
+                Inpainting:<br>
+                <img src="2 short/4_inpaint.png" height="400"><br>
+                <audio controls><source src="2 short/4_inpaint.wav" type="audio/wav"></audio>
+            </div>
+        </div>
+        
+        <div class="example">
+            Prompt: calm, beautiful music with violins<br><br>
+            <div class="column">
+                Model bazowy:<br>
+                <img src="2 short/5_base.png" height="400"><br>
+                <audio controls><source src="2 short/5_base.wav" type="audio/wav"></audio>
+            </div>
+            <div class="column">
+                Inpainting:<br>
+                <img src="2 short/5_inpaint.png" height="400"><br>
+                <audio controls><source src="2 short/5_inpaint.wav" type="audio/wav"></audio>
+            </div>
+        </div>
+        
+        <div class="example">
+            Prompt: fast electronic music with synths<br><br>
+            <div class="column">
+                Model bazowy:<br>
+                <img src="2 short/6_base.png" height="400"><br>
+                <audio controls><source src="2 short/6_base.wav" type="audio/wav"></audio>
+            </div>
+            <div class="column">
+                Inpainting:<br>
+                <img src="2 short/6_inpaint.png" height="400"><br>
+                <audio controls><source src="2 short/6_inpaint.wav" type="audio/wav"></audio>
+            </div>
+        </div>
+
+    </div>
+    <hr>
+    
+    <h1>3. Długie przykłady</h1>
+    <div>
+        <p>Następujące przykłady zostały wygenerowane automatycznie poprzez wielokrotne użycie modelu z inpaintingiem.</p>
+        
+        <div class="example">
+            Prompt: slow, epic, exciting, foreboding music with violins and orchestra<br>
+            00:00 - 00:15 intro<br>
+            00:32 - 00:55 chorus<br>
+            00:55 - 01:00 outro<br><br>
+            <div class="scroll"><img src="3 long/1_spectrogram.png" height="300"></div>
+            <audio controls><source src="3 long/1_audio.wav" type="audio/wav"></audio>
+        </div>
+        
+        <div class="example">
+            Prompt: exciting rock music with electric guitars and violins<br>
+            00:00 - 00:10 intro<br>
+            00:10 - 00:30 chorus<br>
+            00:30 - 00:40 solo<br>
+            00:40 - 00:50 outro<br><br>
+            <div class="scroll"><img src="3 long/2_spectrogram.png" height="300"></div>
+            <audio controls><source src="3 long/2_audio.wav" type="audio/wav"></audio>
+        </div>
+        
+        <div class="example">
+            Prompt: fast, upbeat electronic music with synths<br>
+            00:00 - 00:16 intro<br>
+            00:30 - 00:50 chorus<br>
+            00:50 - 01:00 outro<br><br>
+            <div class="scroll"><img src="3 long/3_spectrogram.png" height="300"></div>
+            <audio controls><source src="3 long/3_audio.wav" type="audio/wav"></audio>
+        </div>
+        
+        <div class="example">
+            Prompt: calm, happy and lighthearted music with violins<br>
+            00:00 - 00:15 intro<br>
+            00:40 - 00:55 chorus<br>
+            00:55 - 01:00 outro<br><br>
+            <div class="scroll"><img src="3 long/4_spectrogram.png" height="300"></div>
+            <audio controls><source src="3 long/4_audio.wav" type="audio/wav"></audio>
+        </div>
+        
+        <div class="example">
+            Prompt: epic, uplifting and exciting orchestral music with heavy drums, trumpets and violins<br>
+            00:00 - 00:07 intro<br>
+            00:40 - 01:00 chorus<br>
+            01:00 - 01:15 outro<br><br>
+            <div class="scroll"><img src="3 long/5_spectrogram.png" height="300"></div>
+            <audio controls><source src="3 long/5_audio.wav" type="audio/wav"></audio>
+        </div>
+        
+        <div class="example">
+            Prompt: lively jazz music with saxophones and pianos<br>
+            00:00 - 00:15 intro<br>
+            00:40 - 00:55 chorus<br>
+            00:55 - 01:00 outro<br><br>
+            <div class="scroll"><img src="3 long/6_spectrogram.png" height="300"></div>
+            <audio controls><source src="3 long/6_audio.wav" type="audio/wav"></audio>
+        </div>
+        
+        <div class="example">
+            Prompt: slow, mysterious music with flutes<br>
+            00:00 - 00:10 intro<br>
+            00:40 - 01:00 chorus<br><br>
+            <div class="scroll"><img src="3 long/7_spectrogram.png" height="300"></div>
+            <audio controls><source src="3 long/7_audio.wav" type="audio/wav"></audio>
+        </div>
+
+        <p>Następne dwa przykłady zostały wygenerowane ręcznie przy użyciu interaktywnej aplikacji.</p>
+        
+        <div class="example">
+            Prompt bazowy: epic orchestral music with violins and trumpets<br><br>
+            <div class="scroll"><img src="3 long/app/1.png" height="300"></div>
+            <audio controls><source src="3 long/app/1.wav" type="audio/wav"></audio>
+        </div>
+        
+        <div class="example">
+            Prompt bazowy: exciting rock music with electric guitars and violins<br><br>
+            <div class="scroll"><img src="3 long/app/2.png" height="300"></div>
+            <audio controls><source src="3 long/app/2.wav" type="audio/wav"></audio>
+        </div>
+
+        <p>Ostatni przykład to wynik eksperymentu weryfikującego inpainting. Na istniejącym utworze wykonany został inpainting na kolejnych 32-pikselowych odstępach, a następnie 
+            skonkatenowano wszystkie wyniki inpaintingu. Pierwszy spektrogram to oryginał, a następny to wynik eksperymentu, czyli konkatenacja wygenerowanych 32-pikselowych fragmentów. 
+            W wyniku powstają artefakty na granicach tych fragmentów - aby nieco zmniejszyć ich zauważalność eksperyment został powtórzony z przesunięciem o 16 pikseli, czyli z granicami 
+            w innych miejscach (trzeci spektrogram), a wyniki obu eksperymentów zostały uśrednione (czwarty spektrogram).</p>
+        
+        <div class="example">
+            Oryginał:<br>
+            <div class="scroll"><img src="3 long/experiment/org.png" height="300"></div>
+            <audio controls><source src="3 long/experiment/org.wav" type="audio/wav"></audio><br><br>
+
+            Eksperyment:<br>
+            <div class="scroll"><img src="3 long/experiment/a.png" height="300"></div>
+            <audio controls><source src="3 long/experiment/a.wav" type="audio/wav"></audio><br><br>
+
+            Eksperyment z przesunięciem:<br>
+            <div class="scroll"><img src="3 long/experiment/b.png" height="300"></div>
+            <audio controls><source src="3 long/experiment/b.wav" type="audio/wav"></audio><br><br>
+            
+            Średnia:<br>
+            <div class="scroll"><img src="3 long/experiment/avg.png" height="300"></div>
+            <audio controls><source src="3 long/experiment/avg.wav" type="audio/wav"></audio>
+        </div>
+
+    </div>
+    <hr>
+
+    <h1>4. Upscaler - jakość dźwięku</h1>
+    <div>
+        <p>Następujące przykłady demonstrują jakość spektrogramów powiększonych przez upscaler. Każdy przykład jest porównianiem trzech spektrogramów istniejącego utworu: oryginalnego, czterokrotnie pomniejszonego, oraz powiększonego przez upscaler.</p>
+
+        <div class="example">
+            Oryginał:<br>
+            <img src="4 upsc/0.png" width="900"><br>
+            <audio controls><source src="4 upsc/0.wav" type="audio/wav"></audio><br>
+
+            Po pomniejszeniu:<br>
+            <img src="4 upsc/0_small.png" width="900"><br>
+            <audio controls><source src="4 upsc/0_small.wav" type="audio/wav"></audio> <br>
+
+            Upscaler:<br>
+            <img src="4 upsc/0_big.png" width="900"><br>
+            <audio controls><source src="4 upsc/0_big.wav" type="audio/wav"></audio>
+        </div><br>
+        
+        <div class="example">
+            Oryginał:<br>
+            <img src="4 upsc/1.png" width="900"><br>
+            <audio controls><source src="4 upsc/1.wav" type="audio/wav"></audio><br>
+
+            Po pomniejszeniu:<br>
+            <img src="4 upsc/1_small.png" width="900"><br>
+            <audio controls><source src="4 upsc/1_small.wav" type="audio/wav"></audio> <br>
+            
+            Upscaler:<br>
+            <img src="4 upsc/1_big.png" width="900"><br>
+            <audio controls><source src="4 upsc/1_big.wav" type="audio/wav"></audio>
+        </div><br>
+        
+        <div class="example">
+            Oryginał:<br>
+            <img src="4 upsc/2.png" width="900"><br>
+            <audio controls><source src="4 upsc/2.wav" type="audio/wav"></audio><br>
+
+            Po pomniejszeniu:<br>
+            <img src="4 upsc/2_small.png" width="900"><br>
+            <audio controls><source src="4 upsc/2_small.wav" type="audio/wav"></audio> <br>
+            
+            Upscaler:<br>
+            <img src="4 upsc/2_big.png" width="900"><br>
+            <audio controls><source src="4 upsc/2_big.wav" type="audio/wav"></audio>
+        </div><br>
+        
+        <div class="example">
+            Oryginał:<br>
+            <img src="4 upsc/3.png" width="900"><br>
+            <audio controls><source src="4 upsc/3.wav" type="audio/wav"></audio><br>
+
+            Po pomniejszeniu:<br>
+            <img src="4 upsc/3_small.png" width="900"><br>
+            <audio controls><source src="4 upsc/3_small.wav" type="audio/wav"></audio> <br>
+            
+            Upscaler:<br>
+            <img src="4 upsc/3_big.png" width="900"><br>
+            <audio controls><source src="4 upsc/3_big.wav" type="audio/wav"></audio>
+        </div><br>
+        
+        <div class="example">
+            Oryginał:<br>
+            <img src="4 upsc/4.png" width="900"><br>
+            <audio controls><source src="4 upsc/4.wav" type="audio/wav"></audio><br>
+
+            Po pomniejszeniu:<br>
+            <img src="4 upsc/4_small.png" width="900"><br>
+            <audio controls><source src="4 upsc/4_small.wav" type="audio/wav"></audio> <br>
+            
+            Upscaler:<br>
+            <img src="4 upsc/4_big.png" width="900"><br>
+            <audio controls><source src="4 upsc/4_big.wav" type="audio/wav"></audio>
+        </div><br>
+        
+        <div class="example">
+            Oryginał:<br>
+            <img src="4 upsc/5.png" width="900"><br>
+            <audio controls><source src="4 upsc/5.wav" type="audio/wav"></audio><br>
+
+            Po pomniejszeniu:<br>
+            <img src="4 upsc/5_small.png" width="900"><br>
+            <audio controls><source src="4 upsc/5_small.wav" type="audio/wav"></audio> <br>
+            
+            Upscaler:<br>
+            <img src="4 upsc/5_big.png" width="900"><br>
+            <audio controls><source src="4 upsc/5_big.wav" type="audio/wav"></audio>
+        </div><br>
+
+    </div>
+    <hr>
+
+    <h1>5. Modele z upscalerem</h1>
+    <div>
+        <p>Następujące fragmenty zostały wygenerowane przez modele generujące pomniejszone spektrogramy (podłużne i kwadratowe) oraz powiększone przez upscaler.<br>
+        Uwaga: brzmią one bardzo nieprzyjemnie.</p>
+
+        <div class="example">
+            Prompt: upbeat rock music with electric guitars<br><br>
+            <div>
+                Model podłużny:<br>
+                <div class="scroll"><img src="5 small/1 long.png" height="300"></div>
+                <audio controls><source src="5 small/1 long.wav" type="audio/wav"></audio><br><br>
+            </div>
+            <div>
+                Model kwadratowy:<br>
+                <div class="scroll"><img src="5 small/1 square.png" height="300"></div>
+                <audio controls><source src="5 small/1 square.wav" type="audio/wav"></audio>
+            </div>
+        </div>
+
+        <div class="example">
+            Prompt: epic orchestral music with trumpets and violins<br><br>
+            <div>
+                Model podłużny:<br>
+                <div class="scroll"><img src="5 small/2 long.png" height="300"></div>
+                <audio controls><source src="5 small/2 long.wav" type="audio/wav"></audio><br><br>
+            </div>
+            <div>
+                Model kwadratowy:<br>
+                <div class="scroll"><img src="5 small/2 square.png" height="300"></div>
+                <audio controls><source src="5 small/2 square.wav" type="audio/wav"></audio>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+        const audio = document.getElementsByTagName("audio");
+        for (const a of audio) {
+            a.volume = 0.3;
+        }
+
+        let current = null;
+        $('audio').on('playing', function() {
+            if (current && !current.paused && current != this)
+                current.pause();
+            current = this;
+        });
+    </script>
 </body>
 </html>
